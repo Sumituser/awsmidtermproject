@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef); /* Light gradient background */
+            color: #343a40; /* Dark text */
+            font-family: 'Arial', sans-serif; /* Clean font */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/pw-maze-light.png'); /* Subtle pattern */
+        }
+
+        .container {
+            max-width: 600px; /* Limit width */
+            padding: 30px; /* Padding */
+            background-color: #ffffff; /* White background */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            transition: transform 0.3s; /* Animation */
+        }
+
+        .container:hover {
+            transform: translateY(-5px); /* Slight lift effect */
+        }
+
+        h1 {
+            color: #007bff; /* Blue heading */
+            text-align: center; /* Centered heading */
+            margin-bottom: 20px; /* Space below heading */
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px; /* Spacing */
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 12px; /* More padding */
+            margin: 5px 0 15px; /* Spacing */
+            border: 1px solid #ced4da; /* Light border */
+            border-radius: 6px; /* Rounded corners */
+            box-sizing: border-box;
+            font-size: 16px; /* Larger text */
+        }
+
+        input[type="submit"] {
+            background-color: #28a745; /* Green button */
+            color: #ffffff; /* White text */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838; /* Darker green on hover */
+            transform: scale(1.05); /* Slightly grow button */
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px; /* Space above table */
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px; /* More padding */
+            text-align: left;
+            border-bottom: 1px solid #dee2e6; /* Light border */
+        }
+
+        th {
+            background-color: #f8f9fa; /* Light gray header background */
+            font-weight: bold; /* Bold header */
+        }
+
+        tbody tr:hover {
+            background-color: #f1f1f1; /* Highlight row on hover */
+        }
+
+        #studentSaved {
+            text-align: center; /* Center saved message */
+            font-weight: bold; /* Bold message */
+            color: #28a745; /* Green message */
+            margin-top: 10px; /* Space above message */
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between; /* Space buttons evenly */
+            margin-top: 20px; /* Space above button container */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Save and View Student Data</h1>
+        
+        <label for="studentid">Student ID:</label>
+        <input type="text" name="studentid" id="studentid">
+        
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        
+        <label for="class">Class:</label>
+        <input type="text" name="class" id="class">
+        
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age">
+        
+        <div class="btn-container">
+            <input type="submit" id="savestudent" value="Save Student Data">
+            <input type="submit" id="getstudents" value="View all Students">
+        </div>
+
+        <p id="studentSaved"></p>
+        
+        <div id="showStudents">
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Student data will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+</body>
+</html>
